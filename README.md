@@ -11,13 +11,7 @@ Telegram-бот, который анализирует датасеты (CSV/Exc
 -  Поддержка пользовательских инструкций для анализа
 -  Защита от prompt injection 
 -  Поддержка форматов CSV и Excel (.xlsx)
-## Технологии
- 
-- [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) — Telegram интерфейс
-- [Groq API](https://groq.com/) — LLM (llama-3.3-70b-versatile) с tool calling
-- [pandas](https://pandas.pydata.org/) — обработка данных
-- [matplotlib](https://matplotlib.org/) — визуализация
-- [python-dotenv](https://github.com/theskumar/python-dotenv) — управление переменными окружения
+
 ## Структура проекта
  
 ```
@@ -27,19 +21,18 @@ Telegram-бот, который анализирует датасеты (CSV/Exc
 ├── security.py       # Защита от prompt injection
 ├── config.py         # Конфигурация и переменные окружения
 ├── requirements.txt  # Зависимости
-├── Procfile          # Для деплоя на Railway
 └── .env              # Ключи API 
 ```
  
 ## Запуск
  
-### 1. Установи зависимости
+### 1. Установка зависимостей
  
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Запусти бота
+### 2. Запуск бота
  
 ```bash
 python bot.py
@@ -75,8 +68,8 @@ https://t.me/analytics_llm_agent_bot
 4. **Бизнес-выводы** — минимум 3 вывода на основе данных
 ## Безопасность
  
-- **Двухуровневая защита от prompt injection:** проверка по паттернам + LLM-классификатор
-- **Проверка содержимого датасета:** сканирование текстовых ячеек на инъекции
+- **Защита от prompt injection:** проверка по паттернам + LLM-классификатор
+- **Проверка содержимого датасета:** сканирование текстовых ячеек
 - **Ограниченное окружение выполнения кода:** запрещены `os`, `subprocess`, `eval`, `exec` и другие операции
 - **Проверка кода перед выполнением:** весь код, сгенерированный LLM, проверяется перед запуском
 
